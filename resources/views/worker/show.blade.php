@@ -13,7 +13,7 @@ Index page
             <div>Is married? {{$worker->is_married}}</div>
         </div>
         <div>
-            <a href="{{route('worker.index')}}">Back</a>
+            <a href="{{route('workers.index')}}">Back</a>
         </div>
     <hr>
 

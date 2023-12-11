@@ -4,11 +4,11 @@
 Index page
 <hr>
 <div>
-    <a href="{{route('worker.create')}}"> Add</a>
+    <a href="{{route('workers.create')}}"> Add</a>
 </div>
 <hr>
 <div>
-    <form action="{{route('worker.index')}}">
+    <form action="{{route('workers.index')}}">
         <input type="text" name="name" placeholder="name" value="{{request()->get('name')}}">
         <input type="text" name="surname" placeholder="surname" value="{{request()->get('surname')}}">
         <input type="text" name="email" placeholder="email" value="{{request()->get('email')}}">
@@ -19,7 +19,7 @@ Index page
         {{request()->get('is_married') == 'on' ? 'checked' : ''}}>
         <label for="isMarried">Is married?</label>
         <input type="submit">
-        <a href="{{route('worker.index')}}">Reset</a>
+        <a href="{{route('workers.index')}}">Reset</a>
     </form>
 </div>
 <hr>
@@ -34,12 +34,12 @@ Index page
             <div>Is married: {{$worker->is_married}}</div>
         </div>
         <div>
-            <a href="{{route('worker.show', $worker->id)}}"> Read</a>
+            <a href="{{route('workers.show', $worker->id)}}"> Read</a>
             <div>
-                <a href="{{route('worker.edit', $worker->id)}}"> Edit</a>
+                <a href="{{route('workers.edit', $worker->id)}}"> Edit</a>
             </div>
             <div>
-                <form action="{{route('worker.delete', $worker->id)}}" method="post">
+                <form action="{{route('workers.destroy', $worker->id)}}" method="post">
                     @csrf
                     @method('Delete')
                     <input type="submit" value="Delete">
@@ -51,6 +51,11 @@ Index page
     <div class="my-nav">
         {{$workers->withQueryString()->links()}}
     </div>
+    <style>
+        .my-nav svg{
+            width: 20px;
+        }
+    </style>
 </div>
 
 @endsection

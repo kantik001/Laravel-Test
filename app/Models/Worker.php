@@ -18,19 +18,7 @@ class Worker extends Model
 
     protected static function booted()
     {
-        static::created(function ($model) {
 
-            event(new CreatedEvent($model));
-
-        });
-
-        static::updated(function ($model) {
-
-            if($model->wasChanged() && $model->getOriginal('age') != $model->getAttributes()['age']) {
-                dd(111);
-            };
-
-        });
     }
 
     public function profile()

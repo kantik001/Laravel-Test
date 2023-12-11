@@ -46,7 +46,7 @@ class NewController extends Controller
     public function show(Worker $worker)
     {
         return view('worker.show', compact('worker'));
-        dd($worker);
+
     }
 
     public function create()
@@ -59,7 +59,7 @@ class NewController extends Controller
         $data = $request->validated();
         $data['is_married'] = isset($data['is_married']);
         Worker::create($data);
-        return redirect()->route('worker.index');
+        return redirect()->route('workers.index');
     }
 
     public function edit(Worker $worker)
@@ -71,13 +71,13 @@ class NewController extends Controller
         $data = $request->validated();
         $data['is_married'] = isset($data['is_married']);
         $worker->update($data);
-        return redirect()->route('worker.show', $worker->id);
+        return redirect()->route('workers.show', $worker->id);
     }
 
-    public function delete(Worker $worker)
+    public function destroy(Worker $worker)
     {
         $worker->delete();
-        return redirect()->route("worker.index");
+        return redirect()->route("workers.index");
     }
 
 }

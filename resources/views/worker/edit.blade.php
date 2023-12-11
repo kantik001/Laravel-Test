@@ -5,7 +5,7 @@ Create page
 <hr>
 <div>
         <div>
-            <form action="{{route('worker.update', $worker->id)}}" method="Post">
+            <form action="{{route('workers.update', $worker->id)}}" method="Post">
                 @csrf
                 @method('Patch')
                 <div><input type="text" name="name" placeholder="name" value="{{old("name") ?? $worker->name}}">

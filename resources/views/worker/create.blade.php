@@ -7,7 +7,7 @@ Create page
 <div>
 
         <div>
-            <form action="{{route('worker.store')}}" method="Post">
+            <form action="{{route('workers.store')}}" method="Post">
                 @csrf
                 <div><input type="text" name="name" placeholder="name" value="{{old("name")}}">
                     <div>

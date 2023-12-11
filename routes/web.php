@@ -16,6 +16,8 @@ use Inertia\Inertia;
 |
 */
 
+Route::resource('workers', \App\Http\Controllers\NewController::class);
+
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
