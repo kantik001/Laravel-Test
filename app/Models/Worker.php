@@ -18,6 +18,9 @@ class Worker extends Model
 
     protected static function booted()
     {
+        static::created(function ($model){
+            event(new CreatedEvent($model));
+        });
 
     }
 
