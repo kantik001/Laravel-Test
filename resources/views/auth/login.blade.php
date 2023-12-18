@@ -21,7 +21,7 @@
 
                 <x-input-error :messages="$errors->get('email')" class="mt-2"/>
             </div>
-            <!-- Last name -->
+            <!-- Last name-->
             <div class="mt-4">
                 <x-input-label for="last-name" value="Last name"/>
 
