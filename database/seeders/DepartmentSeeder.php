@@ -10,8 +10,10 @@ class DepartmentSeeder extends Seeder
 {
     /**
      * Run the database seeds.
+     *
+     * @return void
      */
-    public function run(): void
+    public function run()
     {
         Department::factory(3)->create();
     }

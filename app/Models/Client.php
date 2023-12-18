@@ -11,14 +11,14 @@ class Client extends Model
 
     protected $guarded = false;
 
-    public function reviews()
-    {
-        return $this->morphMany(Rewiew::class, 'rewiewable');
-    }
-
     public function avatar()
     {
         return $this->morphOne(Avatar::class, 'avatarable');
+    }
+
+    public function reviews()
+    {
+        return $this->morphMany(Review::class, 'reviewable');
     }
 
     public function tags()

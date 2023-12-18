@@ -9,9 +9,11 @@ class PositionSeeder extends Seeder
 {
     /**
      * Run the database seeds.
+     *
+     * @return void
      */
-    public function run(): void
+    public function run()
     {
-        Position::factory(3)->create();
+        Position::factory(5)->create();
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Department;
 use App\Models\Position;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -15,17 +16,17 @@ class WorkerFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): array
+    public function definition()
     {
         return [
-            'name' => fake() -> name(),
-            'surname' => fake() -> lastName,
-            'email' => fake() -> unique() -> safeEmail() ,
-            'age' => fake() -> numberBetween(18, 36),
-            'description' => fake() -> text(300),
-            'is_married' => fake() -> boolean,
+            'name' => fake()->name,
+            'surname' => fake()->lastName,
+            'email' => fake()->unique()->safeEmail(),
+            'age' => fake()->numberBetween(18, 36),
+            'description' => fake()->text(300),
+            'is_married' => fake()->boolean,
             'position_id' => Position::inRandomOrder()->first()->id
-            //
+
         ];
     }
 }

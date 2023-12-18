@@ -15,10 +15,10 @@ class PositionFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): array
+    public function definition()
     {
         return [
-            'title' => fake() ->jobTitle,
+            'title' => fake()->jobTitle,
             'department_id' => Department::inRandomOrder()->first()->id
         ];
     }

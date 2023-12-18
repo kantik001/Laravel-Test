@@ -9,12 +9,15 @@
 </head>
 <body>
 <h1>Worker app</h1>
+<h1>Some header navigation</h1>
 
-@yield('sector')
+@yield('content')
+
+
 </body>
 </html>
 <style>
     .my-nav svg{
-        width:20px;
+        width: 20px;
     }
 </style>

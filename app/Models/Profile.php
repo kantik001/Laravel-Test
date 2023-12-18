@@ -9,12 +9,16 @@ class Profile extends Model
 {
     use HasFactory;
 
+
     protected $table = 'profiles';
 
     protected $guarded = false;
+
 
     public function worker()
     {
         return $this->belongsTo(Worker::class);
     }
+
+
 }

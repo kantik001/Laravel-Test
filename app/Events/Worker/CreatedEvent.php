@@ -18,6 +18,8 @@ class CreatedEvent
 
     /**
      * Create a new event instance.
+     *
+     * @return void
      */
     public function __construct($worker)
     {
@@ -28,12 +30,10 @@ class CreatedEvent
     /**
      * Get the channels the event should broadcast on.
      *
-     * @return array<int, \Illuminate\Broadcasting\Channel>
+     * @return \Illuminate\Broadcasting\Channel|array
      */
-    public function broadcastOn(): array
+    public function broadcastOn()
     {
-        return [
-            new PrivateChannel('channel-name'),
-        ];
+        return new PrivateChannel('channel-name');
     }
 }

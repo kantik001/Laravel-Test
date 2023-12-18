@@ -15,15 +15,14 @@ class ProfileFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): array
+    public function definition()
     {
         return [
             'worker_id' => Worker::factory()->create(),
             'city' => fake()->city,
             'skill' => fake()->jobTitle,
-            'experience' => fake()->numberBetween(2,10),
+            'experience' => fake()->numberBetween(2, 10),
             'finished_study_at' => fake()->date,
-
         ];
     }
 }

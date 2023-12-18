@@ -8,13 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     use HasFactory;
-
     protected $table = 'projects';
 
     protected $guarded = false;
+
 
     public function workers()
     {
         return $this->belongsToMany(Worker::class);
     }
+
 }

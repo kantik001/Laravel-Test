@@ -13,6 +13,7 @@ class Position extends Model
 
     protected $guarded = false;
 
+
     public function workers()
     {
         return $this->hasMany(Worker::class);
@@ -25,6 +26,7 @@ class Position extends Model
 
     public function queryWorker()
     {
-        return $this->hasOne(Worker::class)->ofMany('age', 'min');
+        return $this->hasOne(Worker::class)->where('surname', '=','Krasavina');
     }
+
 }
