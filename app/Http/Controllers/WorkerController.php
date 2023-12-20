@@ -29,7 +29,6 @@ class WorkerController extends Controller
         $workers = $workers->paginate(4);
 
         return view('worker.index', compact('workers'));
-        dd(111);
 
     }
 
