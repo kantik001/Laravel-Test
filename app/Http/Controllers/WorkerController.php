@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Filters\Var1\WorkerFilter;
+use App\Http\Filters\Var2\Worker\Email;
 use App\Http\Filters\Var2\Worker\From;
+use App\Http\Filters\Var2\Worker\IsMarried;
+use App\Http\Filters\Var2\Worker\Surname;
 use App\Http\Filters\Var2\Worker\To;
 use App\Http\Filters\Var2\Worker\Name;
 use App\Http\Requests\Worker\IndexRequest;
@@ -23,6 +26,9 @@ class WorkerController extends Controller
                 From::class,
                 To::class,
                 Name::class,
+                Surname::class,
+                Email::class,
+                IsMarried::class
             ])
             ->thenReturn();
 
